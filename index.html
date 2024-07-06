@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DO YOU LOVE ME ? BY DAWLA</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        color: black;
+    }
+
+    #yes {
+        border: none;
+        width: 80px;
+        background-color: rgb(240, 33, 33);
+        border-radius: 10px;
+        font-size: 20px;
+        padding: 6px;
+        color: white;
+        cursor: pointer;
+    }
+
+    #game-container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    #target {
+        position: absolute;
+        background-color: rgb(0, 89, 255);
+        border: none;
+        width: 80px;
+        border-radius: 10px;
+        font-size: 20px;
+        padding: 6px;
+        cursor: pointer;
+        transition: top 0.1s, left 0.2s,right 0.2s;
+        color: white;
+    }
+
+    @media (max-width: 767px) {
+        #yes {
+            width: 70px;
+            font-size: 18px;
+            padding: 5px;
+            color: white;
+        }
+
+        #target {
+            width: 70px;
+            font-size: 18px;
+            padding: 5px;
+            color: white;
+        }
+    }
+</style>
+</head>
+<body>
+    <div id="game-container">
+        <div class="box">
+            <h1>Do you love me?</h1>
+            <button id="target">No</button>
+            <button id="yes">Yes</button>
+        </div>
+    </div>
+
+    <script>
+        const target = document.getElementById('target');
+        function moveTarget() {
+            const maxWidth = window.innerWidth - 150;
+            const maxHeight = window.innerHeight - 300;
+
+            const randomX = Math.floor(Math.random() * maxWidth);
+            const randomY = Math.floor(Math.random() * maxHeight);
+
+            target.style.left = randomX + 'px';
+            target.style.top = randomY + 'px';
+        }
+
+        target.addEventListener('mouseover', function() {
+            moveTarget();
+        });
+
+        const yes = document.getElementById('yes');
+        yes.addEventListener('click', () => {
+            alert("Thank You , DAWLA LOVES YOU ❤");
+        });
+    </script>
+</body>
+</html>
